@@ -5,15 +5,17 @@ var jsdom = require('jsdom/lib/old-api')
 const chartWidth = 500
 const chartHeight = 500
 
-var arc = d3.svg.arc()
-  .outerRadius(chartWidth / 2 - 10)
-  .innerRadius(0)
+var arc = d3.svg.arc().outerRadius(chartWidth / 2 - 10).innerRadius(0)
 
 var colours = ['#F00', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000']
 
 module.exports = function (pieData, outputLocation) {
-  if (!pieData) pieData = [12, 31]
-  if (!outputLocation) outputLocation = 'demo.svg'
+  if (!pieData) {
+    pieData = [12, 31]
+  }
+  if (!outputLocation) {
+    outputLocation = 'demo.svg'
+  }
 
   jsdom.env({
     html: '',
