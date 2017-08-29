@@ -6,16 +6,14 @@
 </head>
 
 <body>
-  <div class="mermaid" id="test-id">
+  <div class="mermaid">
 graph LR
 A-->B
   </div>
-  <div id="test-id2">test</div>
   <script src="https://unpkg.com/mermaid@7.0.4/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({ startOnLoad: true });
-    mermaid.init(undefined, document.getElementById('test-id'));
-    document.getElementById('test-id2').innerText = 'Hello world';
+    mermaid.init(undefined, document.querySelector('.mermaid'));
   </script>
 </body>
 

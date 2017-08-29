@@ -1,9 +1,10 @@
-const jsdom = require('jsdom')
-const { JSDOM } = jsdom
+const JSDOM = require('jsdom').JSDOM
+const fs = require('fs')
 
-JSDOM.fromFile('index.html', { resources: 'usable' }).then(dom => {
+JSDOM.fromFile('index.html', { resources: 'usable', runScripts: 'dangerously' }).then(dom => {
   setTimeout(function () {
-    console.log(dom.serialize())
-    console.log(dom.window.document.getElementById('test-id2').innerText)
+    const svg = dom.window.document.querySelector('.mermaid').querySelector('svg').outerHTML
+    console.log(svg)
+    fs.writeFileSync('mermaid.svg', svg)
   }, 3000)
 })
