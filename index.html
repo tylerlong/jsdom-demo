@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/mermaid@7.0.4/dist/mermaid.forest.min.css">
+</head>
+
+<body>
+  <div class="mermaid" id="test-id">
+graph LR
+A-->B
+  </div>
+  <div id="test-id2">test</div>
+  <script src="https://unpkg.com/mermaid@7.0.4/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+    mermaid.init(undefined, document.getElementById('test-id'));
+    document.getElementById('test-id2').innerText = 'Hello world';
+  </script>
+</body>
+
+</html>

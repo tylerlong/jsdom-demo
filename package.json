@@ -4,7 +4,7 @@
   "description": "Serverside SVG via D3 & jsdom",
   "main": "index.js",
   "scripts": {
-    "test": "node pie.js"
+    "test": "node mermaid.js"
   },
   "author": "tyler4long@gmail.com",
   "license": "MIT",
